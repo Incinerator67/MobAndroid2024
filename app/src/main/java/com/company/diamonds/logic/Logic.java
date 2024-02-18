@@ -48,7 +48,7 @@ public class Logic
         // Output the top border
         mOut.print("+");
         for (int i = 0; i < Size; i++) {mOut.print("-");}
-        mOut.println("+");
+        mOut.print("+");
         // Output the middle section
         for (int i = 1; i < Size; i++) {
             mOut.print("\n");
@@ -59,26 +59,26 @@ public class Logic
                 for (int k = 2; k < i * 2; k++) {mOut.print(i % 2 == 0 ? "-" : "=");}
                 mOut.print("\\");
                 for (int j = 0; j < size - i; j++) {mOut.print(" ");}
-                mOut.println("|");
+                mOut.print("|");
             }
             else if (i == size) {
-                mOut.println("|<");
+                mOut.print("|<");
                 for (int k = 2; k < Size; k++) {mOut.print(i % 2 == 0 ? "-" : "=");}
                 mOut.print(">|");
             }
             else {
-                mOut.println("|");
-                for (int j = size; j > i; j++) {mOut.print(" ");}
+                mOut.print("|");
+                for (int j = size; j < i; j++) {mOut.print(" ");}
                 mOut.print("\\");
                 for (int k = Size * 2 - 2; k > i * 2; k--) {mOut.print(i % 2 == 0 ? "-" : "=");}
                 mOut.print("/");
-                for (int j = size; j > i; j++) {mOut.print(" ");}
-                mOut.println("|");
+                for (int j = size; j < i; j++) {mOut.print(" ");}
+                mOut.print("|");
             }
         }
         // Output the bottom border
         mOut.print("\n" + "+");
         for (int i = 0; i < Size; i++) {mOut.print("-");}
-        mOut.println("+");
+        mOut.print("+");
     }
 }
