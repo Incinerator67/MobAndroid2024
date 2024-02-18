@@ -44,9 +44,41 @@ public class Logic
      * on-screen button labeled 'Process...' is pressed.
      */
     public void process(int size) {
-
-        // TODO -- add your code here
-
+        int Size = size * 2;
+        // Output the top border
+        mOut.print("+");
+        for (int i = 0; i < Size; i++) {mOut.print("-");}
+        mOut.println("+");
+        // Output the middle section
+        for (int i = 1; i < Size; i++) {
+            mOut.print("\n");
+            if (i < size) {
+                mOut.print("|");
+                for (int j = 0; j < size - i; j++) {mOut.print(" ");}
+                mOut.print("/");
+                for (int k = 2; k < i * 2; k++) {mOut.print(i % 2 == 0 ? "-" : "=");}
+                mOut.print("\\");
+                for (int j = 0; j < size - i; j++) {mOut.print(" ");}
+                mOut.println("|");
+            }
+            else if (i == size) {
+                mOut.println("|<");
+                for (int k = 2; k < Size; k++) {mOut.print(i % 2 == 0 ? "-" : "=");}
+                mOut.print(">|");
+            }
+            else {
+                mOut.println("|");
+                for (int j = size; j > i; j++) {mOut.print(" ");}
+                mOut.print("\\");
+                for (int k = Size * 2 - 2; k > i * 2; k--) {mOut.print(i % 2 == 0 ? "-" : "=");}
+                mOut.print("/");
+                for (int j = size; j > i; j++) {mOut.print(" ");}
+                mOut.println("|");
+            }
+        }
+        // Output the bottom border
+        mOut.print("\n" + "+");
+        for (int i = 0; i < Size; i++) {mOut.print("-");}
+        mOut.println("+");
     }
-
 }
